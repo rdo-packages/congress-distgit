@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-654a3257526c27bcd7ddd995df2ce57111f5d51a	openstack/congress-distgit-ptl
+# UUID          Group Name
+False 	Non-Interactive Users
+9e6106c7fa351463a5a698256688d9c25789fa61       	openstack/congress-distgit-core
+654a3257526c27bcd7ddd995df2ce57111f5d51a        	openstack/congress-distgit-ptl
+global:Registered-Users		Registered Users
