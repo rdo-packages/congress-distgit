@@ -1,0 +1,15 @@
+[Unit]
+Description=OpenStack Congress Server
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=congress
+ExecStart=/usr/bin/openstack-congress-server --config-file /etc/congress/congress.conf --log-file /var/log/congress/congress.log
+PrivateTmp=true
+NotifyAccess=all
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
