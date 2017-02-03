@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_75839fcc",
+        "filename": "openstack-congress-server.service",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-03T17:38:11Z",
+      "side": 1,
+      "message": "I can\u0027t find this file in the package, is it there?",
+      "range": {
+        "startLine": 8,
+        "startChar": 58,
+        "endLine": 8,
+        "endChar": 97
+      },
+      "revId": "bca65d3234ea3ba46e273c6d0aa44e8c87160cc2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f51fafb5",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-03T17:38:11Z",
+      "side": 1,
+      "message": "This should be openstack-%{pypi_name}-common, that\u0027s what I undestand from Haikel\u0027s review.",
+      "range": {
+        "startLine": 102,
+        "startChar": 11,
+        "endLine": 102,
+        "endChar": 38
+      },
+      "revId": "bca65d3234ea3ba46e273c6d0aa44e8c87160cc2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_151d03be",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-03T17:38:11Z",
+      "side": 1,
+      "message": "python-tenacity is already in the deps repo.",
+      "range": {
+        "startLine": 210,
+        "startChar": 12,
+        "endLine": 210,
+        "endChar": 26
+      },
+      "revId": "bca65d3234ea3ba46e273c6d0aa44e8c87160cc2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_958833e9",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-03T17:38:11Z",
+      "side": 1,
+      "message": "Let\u0027s exclude %{python2_sitelib}/antl3runtime/Python3, it\u0027s currently being included in the package.",
+      "revId": "bca65d3234ea3ba46e273c6d0aa44e8c87160cc2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
