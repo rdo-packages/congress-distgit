@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f5f16f96",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-02-03T17:09:00Z",
+      "side": 1,
+      "message": "This translate into \u003cmain package\u003e-common so openstack-congress-common.\nPlease change this line to\n%package -n python-%{pypi_name}-common (same goes for %description, %file etc.)",
+      "revId": "2488c7fed2352db881d35f78f8cfbbdb63a91a4d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
