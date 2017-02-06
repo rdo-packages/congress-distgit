@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_cec93c5c",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 17
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 74
+      },
+      "writtenOn": "2017-02-06T19:56:08Z",
+      "side": 1,
+      "message": "The verson should be XXX as well",
+      "revId": "2c98340a74e9258be6268632d5424f99464990ae",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
