@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f83326f4",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-06T09:14:44Z",
+      "side": 1,
+      "message": "Some BuildRequires are missing, this is the output from %check:\n\n2017-02-03 19:25:48,185 INFO:dlrn-build:DEBUG: + /usr/bin/python2 setup.py testr\n2017-02-03 19:25:48,850 INFO:dlrn-build:DEBUG: running testr\n2017-02-03 19:25:48,882 INFO:dlrn-build:DEBUG: Install testrepository to run \u0027testr\u0027 command properly.\n2017-02-03 19:25:48,886 INFO:dlrn-build:DEBUG: + exit 0",
+      "revId": "5ff784babd5d73316a3c792dd6e14672c0aac44b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d83662e7",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-06T09:14:44Z",
+      "side": 1,
+      "message": "The dashboard subpackage should at least require (and BuildRequires if we want to pass tests) openstack-dashboard",
+      "revId": "5ff784babd5d73316a3c792dd6e14672c0aac44b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
