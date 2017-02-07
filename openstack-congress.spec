@@ -266,11 +266,6 @@ exit 0
 %postun
 %systemd_postun_with_restart openstack-%{pypi_name}-server.service
 
-%files -n python-%{pypi_name}
-%license LICENSE
-%doc README.rst
-%{python2_sitelib}/congress*
-
 %files
 %license LICENSE
 %{_bindir}/%{pypi_name}*
@@ -284,6 +279,7 @@ exit 0
 
 %files -n python-%{pypi_name}
 %license LICENSE
+%doc README.rst
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/%{pypi_name}-*.egg-info
 %exclude %{python2_sitelib}/%{pypi_name}/tests
