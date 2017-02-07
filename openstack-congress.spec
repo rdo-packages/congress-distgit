@@ -177,6 +177,7 @@ Documentation for OpenStack Congress service
 # antlr3runtime
 %package -n python-antlr3runtime
 Summary:        Antlr 3 Runtime built buy OpenStack Congress
+License: BSD
 
 %description -n python-antlr3runtime
 Antlr 3 Runtime built buy OpenStack Congress
@@ -313,7 +314,7 @@ exit 0
 %doc doc/build/html
 
 %files -n python-antlr3runtime
-%license LICENSE
+%license thirdparty/antlr3-antlr-3.5/LICENSE.txt
 %{python2_sitelib}/antlr3runtime
 %exclude %{python2_sitelib}/antlr3runtime/Python3
 
