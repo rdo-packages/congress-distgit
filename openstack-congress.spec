@@ -217,8 +217,6 @@ install -d -m 755 %{buildroot}%{_localstatedir}/log/%{pypi_name}
 
 # Move config files to proper location
 install -d -m 755 %{buildroot}%{_sysconfdir}/%{pypi_name}
-#mv %{buildroot}/usr/etc/%{pypi_name}/* %{buildroot}%{_sysconfdir}/%{pypi_name}
-#mv %{buildroot}/usr/etc/rootwrap.d %{buildroot}%{_sysconfdir}
 install -p -D -m 640 etc/%{pypi_name}.conf %{buildroot}%{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
 
 # Move config to horizon
@@ -245,6 +243,7 @@ rm -rf %{buildroot}/usr/etc/
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-server.service
 
 #%check
+# FIXME: tests are taking too long, investigate if they are hung or simply need more time
 #PYTHONPATH=. %{__python2} setup.py testr
 #%if 0%{with tests}
 #PYTHONPATH=/usr/share/openstack-dashboard/ ./run_tests.sh -N -P
@@ -315,5 +314,3 @@ exit 0
 %exclude %{python2_sitelib}/antlr3runtime/Python3
 
 %changelog
-* Thu Jan 12 2017 Dan Radez <dradez@redhat.com> - 5.0.0.0b2-1
-- Initial Packaging
