@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1fbef5ff",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-02-10T15:03:52Z",
+      "side": 1,
+      "message": "will remove this...",
+      "revId": "d0288c7e9bd0e970868073731cff5e742b085b88",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
