@@ -50,14 +50,14 @@ BuildRequires:  python-swiftclient
 BuildRequires:  python-tenacity
 
 Requires:  python-eventlet
-Requires:  python-heatclient
+Requires:  python-heatclient >= 1.6.1
 Requires:  python-heat-translator
-Requires:  python-neutronclient
-Requires:  python-oslo-log
-Requires:  python-oslo-db
-Requires:  python-oslo-policy
-Requires:  python-oslo-service
-Requires:  python-oslo-messaging
+Requires:  python-neutronclient >= 5.1.0
+Requires:  python-oslo-log >= 3.11.0
+Requires:  python-oslo-db >= 4.15.0
+Requires:  python-oslo-policy >= 1.17.0
+Requires:  python-oslo-service >= 1.10.0
+Requires:  python-oslo-messaging >= 5.14.0
 Requires:  python-oslo-sphinx
 Requires:  python-paramiko
 Requires:  python-routes
@@ -80,40 +80,41 @@ Summary:        OpenStack Congress Service
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 
+Requires: python-aodhclient >= 0.7.0
 Requires: python-babel
 Requires: python-eventlet
 Requires: python-PuLP
-Requires: python-keystoneauth1
-Requires: python-keystonemiddleware
+Requires: python-keystoneauth1 >= 2.18.0
+Requires: python-keystonemiddleware >= 4.12.0
 Requires: python-paste
 Requires: python-paste-deploy
 Requires: python-pbr
-Requires: python-keystoneclient
-Requires: python-heatclient
-Requires: python-muranoclient
-Requires: python-novaclient
-Requires: python-neutronclient
-Requires: python-ceilometerclient
-Requires: python-cinderclient
-Requires: python-swiftclient
-Requires: python-ironicclient
+Requires: python-keystoneclient >= 1:3.8.0
+Requires: python-heatclient >= 1.6.1
+Requires: python-muranoclient >= 0.8.2
+Requires: python-novaclient >= 1:6.0.0
+Requires: python-neutronclient >= 5.1.0
+Requires: python-ceilometerclient >= 2.5.0
+Requires: python-cinderclient >= 1.6.0
+Requires: python-swiftclient >= 3.2.0
+Requires: python-ironicclient >= 1.11.0
 Requires: python-alembic
 Requires: python-dateutil
-Requires: python-glanceclient
+Requires: python-glanceclient  >= 2.5.0
 Requires: python-routes
 Requires: python-six
-Requires: python-oslo-concurrency
-Requires: python-oslo-config
-Requires: python-oslo-context
-Requires: python-oslo-db
-Requires: python-oslo-messaging
-Requires: python-oslo-policy
-Requires: python-oslo-serialization
-Requires: python-oslo-service
-Requires: python-oslo-utils
-Requires: python-oslo-middleware
-Requires: python-oslo-vmware
-Requires: python-oslo-log
+Requires: python-oslo-concurrency >= 3.8.0
+Requires: python-oslo-config >= 2:3.14.0
+Requires: python-oslo-context >= 2.9.0
+Requires: python-oslo-db >= 4.15.0
+Requires: python-oslo-messaging >= 5.14.0
+Requires: python-oslo-policy >= 1.17.0
+Requires: python-oslo-serialization >= 1.10.0
+Requires: python-oslo-service >= 1.10.0
+Requires: python-oslo-utils >= 3.18.0
+Requires: python-oslo-middleware >= 3.0.0
+Requires: python-oslo-vmware >= 2.17.0
+Requires: python-oslo-log >= 3.11.0
 Requires: python-webob
 
 %description -n python-%{pypi_name}
