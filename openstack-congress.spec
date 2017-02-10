@@ -3,7 +3,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           openstack-%{pypi_name}
-Version:        XXX
+Version:        5.0.0.0b2
 Release:        XXX
 Summary:        OpenStack Congress Service
 
@@ -238,7 +238,7 @@ install -p -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/openstack
 # remove /usr/etc, it's not needed
 # and the init.d script is in it, which is not needed
 # because a systemd script is being included
-rm -rf %{buildroot}/usr/etc/
+rmdir %{buildroot}/usr/etc/
 
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-server.service
