@@ -219,6 +219,8 @@ install -d -m 755 %{buildroot}%{_localstatedir}/log/%{pypi_name}
 # Move config files to proper location
 install -d -m 755 %{buildroot}%{_sysconfdir}/%{pypi_name}
 install -p -D -m 640 etc/%{pypi_name}.conf %{buildroot}%{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
+install -p -D -m 640 etc/api-paste.conf %{buildroot}%{_sysconfdir}/%{pypi_name}/api-paste.conf
+install -p -D -m 640 etc/policy.conf %{buildroot}%{_sysconfdir}/%{pypi_name}/policy.conf
 
 # Move config to horizon
 mkdir -p  %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled
@@ -234,11 +236,6 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_70_datasources.py %{buildroot}
 
 # Install logrotate
 install -p -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
-
-# remove /usr/etc, it's not needed
-# and the init.d script is in it, which is not needed
-# because a systemd script is being included
-rm -rf %{buildroot}/usr/etc/
 
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-server.service
@@ -300,6 +297,8 @@ exit 0
 %doc README.rst
 %dir %{_sysconfdir}/%{pypi_name}
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
+%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/api-paste.ini
+%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/policy.json
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
 %dir %attr(0750, %{pypi_name}, root) %{_localstatedir}/log/%{pypi_name}
 %dir %{_sharedstatedir}/%{pypi_name}
