@@ -1,20 +1,15 @@
-%global milestone .0rc2
 %global pypi_name congress
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           openstack-%{pypi_name}
 Version:        5.0.0
-Release:        0.2%{?milestone}%{?dist}
+Release:        1%{?dist}
 Summary:        OpenStack Congress Service
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
-#
-# patches_base=5.0.0.0rc2
-#
-
 Source1:        openstack-congress-server.service
 Source2:        congress.logrotate
 
@@ -319,6 +314,9 @@ exit 0
 %exclude %{python2_sitelib}/antlr3runtime/Python3
 
 %changelog
+* Wed Feb 22 2017 Alfredo Moralejo <amoralej@redhat.com> 5.0.0-1
+- Update to 5.0.0
+
 * Mon Feb 20 2017 Alfredo Moralejo <amoralej@redhat.com> 5.0.0-0.2.0rc2
 - Update to 5.0.0.0rc2
 
