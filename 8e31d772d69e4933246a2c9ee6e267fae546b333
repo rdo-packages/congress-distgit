@@ -16,6 +16,24 @@
       "revId": "8e31d772d69e4933246a2c9ee6e267fae546b333",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac4a560_bb6e0f95",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-02-23T21:22:59Z",
+      "side": 1,
+      "message": "Good news, upstream is looking at replacing antlr3\nhttp://lists.openstack.org/pipermail/openstack-dev/2017-February/112677.html",
+      "parentUuid": "7ac7a964_d9191724",
+      "revId": "8e31d772d69e4933246a2c9ee6e267fae546b333",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
