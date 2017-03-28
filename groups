@@ -1,5 +1,9 @@
-# UUID                                  	Group Name
-#
-654a3257526c27bcd7ddd995df2ce57111f5d51a	openstack/congress-distgit-ptl
-9e6106c7fa351463a5a698256688d9c25789fa61	openstack/congress-distgit-core
-global:Registered-Users                 	Registered Users
+# UUID Group Name
+global:Registered-Users	Registered Users
+47c03edd0b61067140d67c3017a989841167977d	openstack/congress-core
+4572c517702492251ad622a289176552a8acbbb2	rdo-superusers
+global:Anonymous-Users	Anonymous Users
+05a678d3d4a168e149d5e8a0063bbd1b1c5526da	Administrators
+401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Non-Interactive Users
+94037d9644f9e390fde4b87c3a3c7af9da25ec17	openstack/congress-ptl
