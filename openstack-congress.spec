@@ -18,7 +18,6 @@ BuildArch:      noarch
 BuildRequires:  git
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-BuildRequires:  openstack-dashboard
 BuildRequires:  python-aodhclient
 BuildRequires:  python-ceilometerclient
 BuildRequires:  python-cinderclient
@@ -156,15 +155,6 @@ OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
 
 This package contains the Tacker unit test files.
 
-# Dashboard package
-%package -n python-%{pypi_name}-dashboard
-Summary:        Dashboard for OpenStack Congress service
-
-Requires:  openstack-dashboard
-
-%description -n python-%{pypi_name}-dashboard
-Dashboard for OpenStack Congress service
-
 # Documentation package
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for OpenStack Congress service
@@ -222,18 +212,6 @@ install -p -D -m 640 etc/%{pypi_name}.conf %{buildroot}%{_sysconfdir}/%{pypi_nam
 install -p -D -m 640 etc/api-paste.ini %{buildroot}%{_sysconfdir}/%{pypi_name}/api-paste.ini
 install -p -D -m 640 etc/policy.json %{buildroot}%{_sysconfdir}/%{pypi_name}/policy.json
 
-# Move config to horizon
-mkdir -p  %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled
-mkdir -p  %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled
-mkdir -p  %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/local_settings.d
-
-mv %{pypi_name}_dashboard/enabled/_50_policy.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_50_policy.py
-mv %{pypi_name}_dashboard/enabled/_60_policies.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_60_policies.py
-mv %{pypi_name}_dashboard/enabled/_70_datasources.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_70_datasources.py
-ln -s %{_sysconfdir}/openstack-dashboard/enabled/_50_policy.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_50_policy.py
-ln -s %{_sysconfdir}/openstack-dashboard/enabled/_60_policies.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_60_policies.py
-ln -s %{_sysconfdir}/openstack-dashboard/enabled/_70_datasources.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_70_datasources.py
-
 # Install logrotate
 install -p -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
 
@@ -281,16 +259,6 @@ exit 0
 %{python2_sitelib}/%{pypi_name}-*.egg-info
 %exclude %{python2_sitelib}/%{pypi_name}/tests
 %exclude %{python2_sitelib}/%{pypi_name}_tempest_tests
-
-%files -n python-%{pypi_name}-dashboard
-%license LICENSE
-%{python2_sitelib}/%{pypi_name}_dashboard
-%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_50_policy.py*
-%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_60_policies.py*
-%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_70_datasources.py*
-%{_sysconfdir}/openstack-dashboard/enabled/_50_policy.py*
-%{_sysconfdir}/openstack-dashboard/enabled/_60_policies.py*
-%{_sysconfdir}/openstack-dashboard/enabled/_70_datasources.py*
 
 %files common
 %license LICENSE
