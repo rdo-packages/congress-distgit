@@ -4,7 +4,7 @@
 
 Name:           openstack-%{pypi_name}
 Version:        5.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OpenStack Congress Service
 
 License:        ASL 2.0
@@ -49,6 +49,7 @@ BuildRequires:  python-PuLP
 BuildRequires:  python-swiftclient
 BuildRequires:  python-tenacity
 
+Requires:  python-congressclient
 Requires:  python-eventlet
 Requires:  python-heatclient >= 1.6.1
 Requires:  python-heat-translator
@@ -314,6 +315,9 @@ exit 0
 %exclude %{python2_sitelib}/antlr3runtime/Python3
 
 %changelog
+* Mon Jul 17 2017 Carlos Goncalves <mail@cgoncalves.pt> 5.0.0-2
+- Require python-congressclient
+
 * Wed Feb 22 2017 Alfredo Moralejo <amoralej@redhat.com> 5.0.0-1
 - Update to 5.0.0
 
