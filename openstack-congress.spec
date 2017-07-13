@@ -48,6 +48,7 @@ BuildRequires:  python-PuLP
 BuildRequires:  python-swiftclient
 BuildRequires:  python-tenacity
 
+Requires:  python-congressclient
 Requires:  python-eventlet
 Requires:  python-heatclient >= 1.6.1
 Requires:  python-heat-translator
