@@ -118,7 +118,7 @@ Requires: python-webob
 
 %description -n python-%{pypi_name}
 OpenStack Congress Service is an open policy framework for OpenStack
-This package contains the Tacker python library.
+This package contains the Congress python library.
 
 %package common
 Summary:  %{pypi_name} common files
@@ -126,12 +126,12 @@ Requires: python-%{pypi_name} = %{version}-%{release}
 
 %description common
 OpenStack Congress Service is an open policy framework for OpenStack
-OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
+OpenStack Congress Service is an NFV Orchestrator for OpenStack.
 
 This package contains the Congress common files.
 
 %package -n python-%{pypi_name}-tests
-Summary:    Tacker unit and functional tests
+Summary:    Congress unit and functional tests
 Requires:   python-%{pypi_name} = %{version}-%{release}
 
 Requires:  python-cliff
@@ -143,7 +143,7 @@ Requires:  python-ordereddict
 Requires:  python-oslotest
 Requires:  python-os-testr
 Requires:  python-subunit
-Requires:  python-tackerclient
+Requires:  python-congressclient
 Requires:  python-tenacity
 Requires:  python-tempest
 Requires:  python-testrepository
@@ -151,9 +151,9 @@ Requires:  python-testtools
 Requires:  python-webtest
 
 %description -n python-%{pypi_name}-tests
-OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
+OpenStack Congress Service is an NFV Orchestrator for OpenStack.
 
-This package contains the Tacker unit test files.
+This package contains the Congress unit test files.
 
 # Documentation package
 %package -n python-%{pypi_name}-doc
@@ -229,7 +229,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-s
 getent group %{pypi_name} >/dev/null || groupadd -r %{pypi_name}
 getent passwd %{pypi_name} >/dev/null || \
     useradd -r -g %{pypi_name} -d %{_sharedstatedir}/%{pypi_name} -s /sbin/nologin \
-    -c "OpenStack Tacker Daemons" %{pypi_name}
+    -c "OpenStack Congress Daemons" %{pypi_name}
 exit 0
 
 %post
