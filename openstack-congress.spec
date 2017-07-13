@@ -81,6 +81,7 @@ Summary:        OpenStack Congress Service
 
 Requires: python-aodhclient >= 0.7.0
 Requires: python-babel
+Requires: python-congressclient >= 1.6.0
 Requires: python-eventlet
 Requires: python-PuLP
 Requires: python-keystoneauth1 >= 2.18.0
