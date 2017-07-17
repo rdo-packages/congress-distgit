@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_282536c2",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-07-17T08:58:59Z",
+      "side": 1,
+      "message": "This line with Requires python-tackerclient should be totally removed not replaced by congressclient. python-congress-tests doesn\u0027t require congressclient according to requirements in upstream project.",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 32
+      },
+      "revId": "c0f9e8a3e37323d039360a6d3bd67c1e674440a6",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
