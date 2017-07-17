@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6334c1de",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-07-17T09:34:12Z",
+      "side": 1,
+      "message": "BTW, i think there are some unneeded requirements here, which are requires in python-congress (eventlet, oslo-*, etc...). But this should be separate review.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 26
+      },
+      "revId": "b4a68461bb92e4f53b582b074ea1caac5e9dbbdb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_035db521",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-07-17T09:34:12Z",
+      "side": 1,
+      "message": "Fix for separate patch, python-oslo-sphinx shouldn\u0027t be Requires here only BuildRequires under docs subpackage (which already is).",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 29
+      },
+      "revId": "b4a68461bb92e4f53b582b074ea1caac5e9dbbdb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
