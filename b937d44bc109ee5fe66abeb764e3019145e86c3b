@@ -16,6 +16,24 @@
       "revId": "b937d44bc109ee5fe66abeb764e3019145e86c3b",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_990592c4",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2017-07-19T22:07:00Z",
+      "side": 1,
+      "message": "It was suggested in https://review.rdoproject.org/r/#/c/7683/ to move from python-congress to openstack-congress. Let me know if you still want it in python-congress -- in such case, it would need to be moved in rdo-master branch too.",
+      "parentUuid": "9aa7fdbe_d958fafc",
+      "revId": "b937d44bc109ee5fe66abeb764e3019145e86c3b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
