@@ -1,0 +1,9 @@
+Code-Review+2: Dan Radez <dradez@redhat.com>
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-by: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-at: Wed, 19 Jul 2017 14:49:35 +0000
+Reviewed-on: https://review.rdoproject.org/r/7698
+Project: openstack/congress-distgit
+Branch: refs/heads/ocata-rdo
