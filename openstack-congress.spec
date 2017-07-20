@@ -58,7 +58,6 @@ Requires:  python-oslo-db >= 4.15.0
 Requires:  python-oslo-policy >= 1.17.0
 Requires:  python-oslo-service >= 1.10.0
 Requires:  python-oslo-messaging >= 5.14.0
-Requires:  python-oslo-sphinx
 Requires:  python-paramiko
 Requires:  python-routes
 Requires:  python-tosca-parser
@@ -159,7 +158,7 @@ This package contains the Congress unit test files.
 Summary:        Documentation for OpenStack Congress service
 
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 
 %description -n python-%{pypi_name}-doc
 Documentation for OpenStack Congress service
@@ -189,7 +188,7 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 PYTHONPATH=. oslo-config-generator --config-file=./etc/%{pypi_name}-config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
 # generate html docs
-PYTHONPATH=. %{__python2} setup.py build_sphinx
+PYTHONPATH=. %{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
