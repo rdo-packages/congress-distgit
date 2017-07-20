@@ -52,6 +52,24 @@
       "revId": "b937d44bc109ee5fe66abeb764e3019145e86c3b",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_99603237",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-07-20T07:38:15Z",
+      "side": 1,
+      "message": "In the mentioned review it was agreed to add congressclient as requires in openstack-congress for convenience similarly to glance, cinder, etc... As it\u0027s not imported in python module i think the righ place to add the requirement is not python-congress but openstack-congress to get it installed in servers running congress services. This is similar approach as other services.",
+      "parentUuid": "9aa7fdbe_d9263a68",
+      "revId": "b937d44bc109ee5fe66abeb764e3019145e86c3b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
