@@ -209,6 +209,7 @@ install -d -m 755 %{buildroot}%{_sysconfdir}/%{pypi_name}
 install -p -D -m 640 etc/%{pypi_name}.conf %{buildroot}%{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
 install -p -D -m 640 etc/api-paste.ini %{buildroot}%{_sysconfdir}/%{pypi_name}/api-paste.ini
 install -p -D -m 640 etc/policy.json %{buildroot}%{_sysconfdir}/%{pypi_name}/policy.json
+install -d -m 750 %{buildroot}%{_sysconfdir}/%{pypi_name}/keys
 
 # Install logrotate
 install -p -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
@@ -266,6 +267,7 @@ exit 0
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/api-paste.ini
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/policy.json
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
+%dir %attr(0750, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/keys
 %dir %attr(0750, %{pypi_name}, root) %{_localstatedir}/log/%{pypi_name}
 %dir %{_sharedstatedir}/%{pypi_name}
 %dir %{_datadir}/%{pypi_name}
