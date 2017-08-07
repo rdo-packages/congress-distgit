@@ -266,6 +266,7 @@ exit 0
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/api-paste.ini
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/policy.json
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
+%config(noreplace) %attr(0750, %{pypi_name}, root) %{_sysconfigdir}/%{pypi_name}/keys
 %dir %attr(0750, %{pypi_name}, root) %{_localstatedir}/log/%{pypi_name}
 %dir %{_sharedstatedir}/%{pypi_name}
 %dir %{_datadir}/%{pypi_name}
