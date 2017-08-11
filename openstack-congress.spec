@@ -134,7 +134,6 @@ Summary:    Congress unit and functional tests
 Requires:   python-%{pypi_name} = %{version}-%{release}
 
 Requires:  python-cliff
-Requires:  python-coverage
 Requires:  python-fixtures
 Requires:  python-hacking
 Requires:  python-mock
