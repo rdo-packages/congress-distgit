@@ -2,6 +2,9 @@
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
+%global common_desc \
+OpenStack Congress Service is an open policy framework for OpenStack
+
 Name:           openstack-%{pypi_name}
 Version:        XXX
 Release:        XXX
@@ -121,7 +124,7 @@ Requires: python-jsonschema >= 2.0.0
 Requires: python-monascaclient >= 1.7.0
 
 %description -n python-%{pypi_name}
-OpenStack Congress Service is an open policy framework for OpenStack
+%{common_desc}
 This package contains the Congress python library.
 
 %package common
@@ -129,7 +132,7 @@ Summary:  %{pypi_name} common files
 Requires: python-%{pypi_name} = %{version}-%{release}
 
 %description common
-OpenStack Congress Service is an open policy framework for OpenStack
+%{common_desc}
 
 This package contains the Congress common files.
 
@@ -152,7 +155,7 @@ Requires:  python-testtools
 Requires:  python-webtest
 
 %description -n python-%{pypi_name}-tests
-OpenStack Congress Service is an open policy framework for OpenStack.
+%{common_desc}.
 
 This package contains the Congress unit test files.
 
