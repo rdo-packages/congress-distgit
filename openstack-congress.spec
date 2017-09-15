@@ -71,9 +71,7 @@ Requires:  python-antlr3runtime
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
 
 Requires(pre): shadow-utils
-Requires(post): systemd
-Requires(preun): systemd
-Requires(postun): systemd
+%{?systemd_requires}
 
 %description
 OpenStack Congress is Policy Management for OpenStack.
