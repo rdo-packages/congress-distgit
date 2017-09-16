@@ -51,6 +51,7 @@ BuildRequires:  python-oslo-vmware
 BuildRequires:  python-PuLP
 BuildRequires:  python-swiftclient
 BuildRequires:  python-tenacity
+BuildRequires:  openstack-macros
 
 Requires:  python-congressclient
 Requires:  python-eventlet
@@ -184,7 +185,7 @@ rm -rf %{pypi_name}.egg-info
 
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config
-rm -rf {test-,}requirements.txt tools/{pip,test}-requires
+%py_req_cleanup
 
 %build
 %py2_build
