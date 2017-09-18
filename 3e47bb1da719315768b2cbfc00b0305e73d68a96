@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c1503061",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 127
+      },
+      "writtenOn": "2017-09-18T11:43:07Z",
+      "side": 0,
+      "message": "is this covered by openstack-macros to include the tools/ entries as well?",
+      "revId": "3e47bb1da719315768b2cbfc00b0305e73d68a96",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
