@@ -144,7 +144,6 @@ Requires:  python-cliff
 Requires:  python-fixtures
 Requires:  python-hacking
 Requires:  python-mock
-Requires:  python-ordereddict
 Requires:  python-oslotest
 Requires:  python-os-testr
 Requires:  python-subunit
