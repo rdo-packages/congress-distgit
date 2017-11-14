@@ -25,7 +25,6 @@ BuildRequires:  python-aodhclient
 BuildRequires:  python-ceilometerclient
 BuildRequires:  python-cinderclient
 BuildRequires:  python-django-horizon
-BuildRequires:  python-django-openstack-auth
 BuildRequires:  python-eventlet
 BuildRequires:  python-futurist
 BuildRequires:  python-glanceclient
