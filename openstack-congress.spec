@@ -22,7 +22,6 @@ BuildRequires:  git
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-aodhclient
-BuildRequires:  python-ceilometerclient
 BuildRequires:  python-cinderclient
 BuildRequires:  python-django-horizon
 BuildRequires:  python-eventlet
@@ -96,7 +95,6 @@ Requires: python-heatclient >= 1.6.1
 Requires: python-muranoclient >= 0.8.2
 Requires: python-novaclient >= 1:9.0.0
 Requires: python-neutronclient >= 6.3.0
-Requires: python-ceilometerclient >= 2.5.0
 Requires: python-cinderclient >= 3.1.0
 Requires: python-swiftclient >= 3.2.0
 Requires: python-ironicclient >= 1.14.0
