@@ -211,7 +211,6 @@ install -d -m 755 %{buildroot}%{_sysconfdir}/%{pypi_name}
 install -p -D -m 640 etc/%{pypi_name}.conf %{buildroot}%{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
 install -d -m 750 %{buildroot}%{_sysconfdir}/%{pypi_name}/keys
 mv %{buildroot}%{_prefix}/etc/%{pypi_name}/api-paste.ini %{buildroot}%{_sysconfdir}/%{pypi_name}/api-paste.ini
-mv %{buildroot}%{_prefix}/etc/%{pypi_name}/policy.json %{buildroot}%{_sysconfdir}/%{pypi_name}/policy.json
 # Remove duplicate config files under /usr/etc/congress
 rmdir %{buildroot}%{_prefix}/etc/%{pypi_name}
 
@@ -269,7 +268,6 @@ exit 0
 %dir %{_sysconfdir}/%{pypi_name}
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/api-paste.ini
-%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/policy.json
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
 %dir %attr(0750, %{pypi_name}, root) %{_sysconfdir}/%{pypi_name}/keys
 %dir %attr(0750, %{pypi_name}, root) %{_localstatedir}/log/%{pypi_name}
