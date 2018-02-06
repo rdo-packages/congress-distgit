@@ -145,7 +145,6 @@ Requires:  python-oslotest
 Requires:  python-os-testr
 Requires:  python-subunit
 Requires:  python-tenacity
-Requires:  python-tempest
 Requires:  python-testrepository
 Requires:  python-testtools
 Requires:  python-webtest
@@ -197,10 +196,6 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %install
 %py2_install
 
-# Create fake egg-info for the tempest plugin
-%global service %{pypi_name}
-%py2_entrypoint %{pypi_name} %{pypi_name}
-
 # Setup directories
 install -d -m 755 %{buildroot}%{_datadir}/%{pypi_name}
 install -d -m 755 %{buildroot}%{_sharedstatedir}/%{pypi_name}
@@ -251,8 +246,6 @@ exit 0
 %files -n python-%{pypi_name}-tests
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}/tests
-%{python2_sitelib}/%{pypi_name}_tempest_tests
-%{python2_sitelib}/%{pypi_name}_tests.egg-info
 
 %files -n python-%{pypi_name}
 %license LICENSE
@@ -260,7 +253,6 @@ exit 0
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/%{pypi_name}-*.egg-info
 %exclude %{python2_sitelib}/%{pypi_name}/tests
-%exclude %{python2_sitelib}/%{pypi_name}_tempest_tests
 
 %files common
 %license LICENSE
