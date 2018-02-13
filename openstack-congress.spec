@@ -20,52 +20,42 @@ BuildArch:      noarch
 
 BuildRequires:  git
 BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
-BuildRequires:  python-aodhclient
-BuildRequires:  python-cinderclient
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-aodhclient
+BuildRequires:  python2-cinderclient
 BuildRequires:  python-django-horizon
-BuildRequires:  python-eventlet
-BuildRequires:  python-futurist
-BuildRequires:  python-glanceclient
-BuildRequires:  python-heatclient
-BuildRequires:  python-ironicclient
-BuildRequires:  python-keystoneauth1
-BuildRequires:  python-keystonemiddleware
-BuildRequires:  python-mock
-BuildRequires:  python-monascaclient
-BuildRequires:  python-mox3
-BuildRequires:  python-muranoclient
-BuildRequires:  python-neutronclient
-BuildRequires:  python-novaclient
-BuildRequires:  python-os-testr
-BuildRequires:  python-oslo-db
-BuildRequires:  python-oslo-config
-BuildRequires:  python-oslo-concurrency
-BuildRequires:  python-oslo-log
-BuildRequires:  python-oslo-messaging
-BuildRequires:  python-oslo-middleware
-BuildRequires:  python-oslo-policy
-BuildRequires:  python-oslo-vmware
-BuildRequires:  python-PuLP
-BuildRequires:  python-swiftclient
-BuildRequires:  python-tenacity
+BuildRequires:  python2-eventlet
+BuildRequires:  python2-futurist
+BuildRequires:  python2-glanceclient
+BuildRequires:  python2-heatclient
+BuildRequires:  python2-ironicclient
+BuildRequires:  python2-keystoneauth1
+BuildRequires:  python2-keystonemiddleware
+BuildRequires:  python2-mock
+BuildRequires:  python2-monascaclient
+BuildRequires:  python2-mox3
+BuildRequires:  python2-muranoclient
+BuildRequires:  python2-neutronclient
+BuildRequires:  python2-novaclient
+BuildRequires:  python2-os-testr
+BuildRequires:  python2-oslo-db
+BuildRequires:  python2-oslo-config
+BuildRequires:  python2-oslo-concurrency
+BuildRequires:  python2-oslo-log
+BuildRequires:  python2-oslo-messaging
+BuildRequires:  python2-oslo-middleware
+BuildRequires:  python2-oslo-policy
+BuildRequires:  python2-oslo-vmware
+BuildRequires:  python2-PuLP
+BuildRequires:  python2-swiftclient
+BuildRequires:  python2-tenacity
 BuildRequires:  systemd
 BuildRequires:  openstack-macros
 
-Requires:  python-congressclient
-Requires:  python-eventlet
-Requires:  python-heatclient >= 1.6.1
-Requires:  python-heat-translator
-Requires:  python-neutronclient >= 6.3.0
-Requires:  python-oslo-log >= 3.22.0
-Requires:  python-oslo-db >= 4.24.0
-Requires:  python-oslo-policy >= 1.23.0
-Requires:  python-oslo-service >= 1.10.0
-Requires:  python-oslo-messaging >= 5.24.2
-Requires:  python-paramiko
-Requires:  python-routes
-Requires:  python-tosca-parser
-Requires:  python-webob
+Requires:  python2-congressclient
+Requires:  python2-heat-translator
+Requires:  python2-paramiko
+Requires:  python2-tosca-parser
 Requires:  python-antlr3runtime
 
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
@@ -81,44 +71,45 @@ Summary:        OpenStack Congress Service
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 
-Requires: python-aodhclient >= 0.7.0
-Requires: python-babel
-Requires: python-eventlet
+Requires: python2-aodhclient >= 0.9.0
+Requires: python2-babel
+Requires: python2-eventlet
 Requires: python-PuLP
-Requires: python-keystoneauth1 >= 3.1.0
-Requires: python-keystonemiddleware >= 4.12.0
+Requires: python2-keystoneauth1 >= 3.3.0
+Requires: python2-keystonemiddleware >= 4.17.0
 Requires: python-paste
 Requires: python-paste-deploy
-Requires: python-pbr
-Requires: python-keystoneclient >= 1:3.8.0
-Requires: python-heatclient >= 1.6.1
-Requires: python-muranoclient >= 0.8.2
-Requires: python-novaclient >= 1:9.0.0
-Requires: python-neutronclient >= 6.3.0
-Requires: python-cinderclient >= 3.1.0
-Requires: python-swiftclient >= 3.2.0
-Requires: python-ironicclient >= 1.14.0
-Requires: python-alembic
+Requires: python2-pbr
+Requires: python2-keystoneclient >= 1:3.8.0
+Requires: python2-heatclient >= 1.10.0
+Requires: python2-mistralclient >= 3.1.0
+Requires: python2-muranoclient >= 0.8.2
+Requires: python2-novaclient >= 1:9.1.0
+Requires: python2-neutronclient >= 6.3.0
+Requires: python2-cinderclient >= 3.3.0
+Requires: python2-swiftclient >= 3.2.0
+Requires: python2-ironicclient >= 2.2.0
+Requires: python2-alembic
 Requires: python-dateutil
-Requires: python-glanceclient  >= 1:2.8.0
-Requires: python-routes
-Requires: python-six
-Requires: python-oslo-concurrency >= 3.8.0
-Requires: python-oslo-config >= 2:4.0.0
-Requires: python-oslo-context >= 2.14.0
-Requires: python-oslo-db >= 4.24.0
-Requires: python-oslo-messaging >= 5.24.2
-Requires: python-oslo-policy >= 1.23.0
-Requires: python-oslo-serialization >= 1.10.0
-Requires: python-oslo-service >= 1.10.0
-Requires: python-oslo-utils >= 3.20.0
-Requires: python-oslo-middleware >= 3.27.0
-Requires: python-oslo-vmware >= 2.17.0
-Requires: python-oslo-log >= 3.22.0
+Requires: python2-glanceclient  >= 1:2.8.0
+Requires: python2-routes
+Requires: python2-six
+Requires: python2-oslo-concurrency >= 3.25.0
+Requires: python2-oslo-config >= 2:5.1.0
+Requires: python2-oslo-context >= 2.19.2
+Requires: python2-oslo-db >= 4.27.0
+Requires: python2-oslo-messaging >= 5.29.0
+Requires: python2-oslo-policy >= 1.30.0
+Requires: python2-oslo-serialization >= 2.18.0
+Requires: python2-oslo-service >= 1.24.0
+Requires: python2-oslo-utils >= 3.33.0
+Requires: python2-oslo-middleware >= 3.31.0
+Requires: python2-oslo-vmware >= 2.17.0
+Requires: python2-oslo-log >= 3.36.0
 Requires: python-webob
-Requires: python-cryptography >= 1.6
-Requires: python-jsonschema >= 2.0.0
-Requires: python-monascaclient >= 1.7.0
+Requires: python2-cryptography >= 1.7.2
+Requires: python2-jsonschema >= 2.6.0
+Requires: python2-monascaclient >= 1.7.0
 
 %description -n python-%{pypi_name}
 %{common_desc}
@@ -138,16 +129,16 @@ Summary:    Congress unit and functional tests
 Requires:   python-%{pypi_name} = %{version}-%{release}
 
 Requires:  python-cliff
-Requires:  python-fixtures
-Requires:  python-hacking
-Requires:  python-mock
-Requires:  python-oslotest
-Requires:  python-os-testr
-Requires:  python-subunit
-Requires:  python-tenacity
-Requires:  python-testrepository
-Requires:  python-testtools
-Requires:  python-webtest
+Requires:  python2-fixtures
+Requires:  python2-hacking
+Requires:  python2-mock
+Requires:  python2-oslotest
+Requires:  python2-os-testr
+Requires:  python2-subunit
+Requires:  python2-tenacity
+Requires:  python2-testrepository
+Requires:  python2-testtools
+Requires:  python2-webtest
 
 %description -n python-%{pypi_name}-tests
 %{common_desc}.
@@ -158,8 +149,8 @@ This package contains the Congress unit test files.
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for OpenStack Congress service
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
 
 %description -n python-%{pypi_name}-doc
 Documentation for OpenStack Congress service
