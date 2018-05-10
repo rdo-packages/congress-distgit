@@ -47,6 +47,7 @@ BuildRequires:  python2-oslo-middleware
 BuildRequires:  python2-oslo-policy
 BuildRequires:  python2-oslo-vmware
 BuildRequires:  python2-PuLP
+BuildREquires:  python2-sphinxcontrib-apidoc
 BuildRequires:  python2-swiftclient
 BuildRequires:  python2-tenacity
 BuildRequires:  systemd
@@ -267,3 +268,4 @@ exit 0
 %exclude %{python2_sitelib}/antlr3runtime/Python3
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/congress/commit/?id=7a6ce94630e9404b916efe8cbf345d04ed9b92f8
