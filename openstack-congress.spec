@@ -151,6 +151,7 @@ Summary:        Documentation for OpenStack Congress service
 
 BuildRequires:  python2-sphinx
 BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-sphinxcontrib-apidoc
 
 %description -n python-%{pypi_name}-doc
 Documentation for OpenStack Congress service
@@ -180,7 +181,8 @@ rm -rf %{pypi_name}.egg-info
 PYTHONPATH=. oslo-config-generator --config-file=./etc/%{pypi_name}-config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
 # generate html docs
-PYTHONPATH=. %{__python2} setup.py build_sphinx -b html
+export PYTHONPATH=.
+sphinx-build -W -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
