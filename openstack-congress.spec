@@ -182,7 +182,9 @@ PYTHONPATH=. oslo-config-generator --config-file=./etc/%{pypi_name}-config-gener
 
 # generate html docs
 export PYTHONPATH=.
-sphinx-build -W -b html doc/source doc/build/html
+# FIXME(ykarel) Remove -W until we upgrade Sphinx to 1.7.5 or
+# https://bugs.launchpad.net/congress/+bug/1778171 is fixed to work with Sphinx 1.6.5
+sphinx-build -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
