@@ -75,7 +75,7 @@ Requires: python2-aodhclient >= 0.9.0
 Requires: python2-babel
 Requires: python2-eventlet
 Requires: python-PuLP
-Requires: python2-keystoneauth1 >= 3.3.0
+Requires: python2-keystoneauth1 >= 3.4.0
 Requires: python2-keystonemiddleware >= 4.17.0
 Requires: python-paste
 Requires: python-paste-deploy
@@ -85,17 +85,17 @@ Requires: python2-heatclient >= 1.10.0
 Requires: python2-mistralclient >= 3.1.0
 Requires: python2-muranoclient >= 0.8.2
 Requires: python2-novaclient >= 1:9.1.0
-Requires: python2-neutronclient >= 6.3.0
+Requires: python2-neutronclient >= 6.7.0
 Requires: python2-cinderclient >= 3.3.0
 Requires: python2-swiftclient >= 3.2.0
-Requires: python2-ironicclient >= 2.2.0
+Requires: python2-ironicclient >= 2.3.0
 Requires: python2-alembic
 Requires: python-dateutil
 Requires: python2-glanceclient  >= 1:2.8.0
 Requires: python2-routes
 Requires: python2-six
-Requires: python2-oslo-concurrency >= 3.25.0
-Requires: python2-oslo-config >= 2:5.1.0
+Requires: python2-oslo-concurrency >= 3.26.0
+Requires: python2-oslo-config >= 2:5.2.0
 Requires: python2-oslo-context >= 2.19.2
 Requires: python2-oslo-db >= 4.27.0
 Requires: python2-oslo-messaging >= 5.29.0
@@ -107,9 +107,10 @@ Requires: python2-oslo-middleware >= 3.31.0
 Requires: python2-oslo-vmware >= 2.17.0
 Requires: python2-oslo-log >= 3.36.0
 Requires: python-webob
-Requires: python2-cryptography >= 1.7.2
+Requires: python2-netaddr >= 0.7.18
+Requires: python2-cryptography >= 2.1
 Requires: python2-jsonschema >= 2.6.0
-Requires: python2-monascaclient >= 1.7.0
+Requires: python2-monascaclient >= 1.12.1
 
 %description -n python-%{pypi_name}
 %{common_desc}
