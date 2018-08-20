@@ -1,3 +1,4 @@
+%global milestone .0rc1
 %global pypi_name congress
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -6,13 +7,17 @@
 OpenStack Congress Service is an open policy framework for OpenStack
 
 Name:           openstack-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        8.0.0
+Release:        0.1%{?milestone}%{?dist}
 Summary:        OpenStack Congress Service
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+#
+# patches_base=8.0.0.0rc1
+#
+
 Source1:        openstack-congress-server.service
 Source2:        congress.logrotate
 
@@ -272,3 +277,6 @@ exit 0
 %exclude %{python2_sitelib}/antlr3runtime/Python3
 
 %changelog
+* Mon Aug 20 2018 RDO <dev@lists.rdoproject.org> 8.0.0-0.1.0rc1
+- Update to 8.0.0.0rc1
+
