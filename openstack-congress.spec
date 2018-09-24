@@ -1,3 +1,14 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %global pypi_name congress
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -19,44 +30,50 @@ Source2:        congress.logrotate
 BuildArch:      noarch
 
 BuildRequires:  git
-BuildRequires:  python2-devel
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-aodhclient
-BuildRequires:  python2-cinderclient
-BuildRequires:  python-django-horizon
-BuildRequires:  python2-eventlet
-BuildRequires:  python2-futurist
-BuildRequires:  python2-glanceclient
-BuildRequires:  python2-heatclient
-BuildRequires:  python2-ironicclient
-BuildRequires:  python2-keystoneauth1
-BuildRequires:  python2-keystonemiddleware
-BuildRequires:  python2-mock
-BuildRequires:  python2-monascaclient
-BuildRequires:  python2-mox3
-BuildRequires:  python2-muranoclient
-BuildRequires:  python2-neutronclient
-BuildRequires:  python2-novaclient
-BuildRequires:  python2-os-testr
-BuildRequires:  python2-oslo-db
-BuildRequires:  python2-oslo-config
-BuildRequires:  python2-oslo-concurrency
-BuildRequires:  python2-oslo-log
-BuildRequires:  python2-oslo-messaging
-BuildRequires:  python2-oslo-middleware
-BuildRequires:  python2-oslo-policy
-BuildRequires:  python2-oslo-vmware
-BuildRequires:  python2-PuLP
-BuildRequires:  python2-swiftclient
-BuildRequires:  python2-tenacity
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-aodhclient
+BuildRequires:  python%{pyver}-cinderclient
+BuildRequires:  python%{pyver}-eventlet
+BuildRequires:  python%{pyver}-futurist
+BuildRequires:  python%{pyver}-glanceclient
+BuildRequires:  python%{pyver}-heatclient
+BuildRequires:  python%{pyver}-ironicclient
+BuildRequires:  python%{pyver}-keystoneauth1
+BuildRequires:  python%{pyver}-keystonemiddleware
+BuildRequires:  python%{pyver}-mock
+BuildRequires:  python%{pyver}-monascaclient
+BuildRequires:  python%{pyver}-mox3
+BuildRequires:  python%{pyver}-muranoclient
+BuildRequires:  python%{pyver}-neutronclient
+BuildRequires:  python%{pyver}-novaclient
+BuildRequires:  python%{pyver}-os-testr
+BuildRequires:  python%{pyver}-oslo-db
+BuildRequires:  python%{pyver}-oslo-config
+BuildRequires:  python%{pyver}-oslo-concurrency
+BuildRequires:  python%{pyver}-oslo-log
+BuildRequires:  python%{pyver}-oslo-messaging
+BuildRequires:  python%{pyver}-oslo-middleware
+BuildRequires:  python%{pyver}-oslo-policy
+BuildRequires:  python%{pyver}-oslo-vmware
+BuildRequires:  python%{pyver}-PuLP
+BuildRequires:  python%{pyver}-swiftclient
+BuildRequires:  python%{pyver}-tenacity
 BuildRequires:  systemd
 BuildRequires:  openstack-macros
 
-Requires:  python2-congressclient
-Requires:  python2-heat-translator
-Requires:  python2-paramiko
-Requires:  python2-tosca-parser
-Requires:  python-antlr3runtime
+# Handle python2 exception
+%if %{pyver} == 2
+BuildRequires:  python-django-horizon
+%else
+BuildRequires:  python%{pyver}-django-horizon
+%endif
+
+Requires:  python%{pyver}-congressclient
+Requires:  python%{pyver}-heat-translator
+Requires:  python%{pyver}-paramiko
+Requires:  python%{pyver}-tosca-parser
+Requires:  python%{pyver}-antlr3runtime
 
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
 
@@ -66,103 +83,122 @@ Requires(pre): shadow-utils
 %description
 OpenStack Congress is Policy Management for OpenStack.
 
-%package -n     python-%{pypi_name}
+%package -n     python%{pyver}-%{pypi_name}
 Summary:        OpenStack Congress Service
-%{?python_provide:%python_provide python2-%{pypi_name}}
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
 
 
-Requires: python2-aodhclient >= 0.9.0
-Requires: python2-babel
-Requires: python2-eventlet
+Requires: python%{pyver}-aodhclient >= 0.9.0
+Requires: python%{pyver}-babel
+Requires: python%{pyver}-eventlet
+Requires: python%{pyver}-keystoneauth1 >= 3.4.0
+Requires: python%{pyver}-keystonemiddleware >= 4.17.0
+Requires: python%{pyver}-pbr
+Requires: python%{pyver}-keystoneclient >= 1:3.8.0
+Requires: python%{pyver}-heatclient >= 1.10.0
+Requires: python%{pyver}-mistralclient >= 3.1.0
+Requires: python%{pyver}-muranoclient >= 0.8.2
+Requires: python%{pyver}-novaclient >= 1:9.1.0
+Requires: python%{pyver}-neutronclient >= 6.7.0
+Requires: python%{pyver}-cinderclient >= 3.3.0
+Requires: python%{pyver}-swiftclient >= 3.2.0
+Requires: python%{pyver}-ironicclient >= 2.3.0
+Requires: python%{pyver}-alembic
+Requires: python%{pyver}-glanceclient  >= 1:2.8.0
+Requires: python%{pyver}-routes
+Requires: python%{pyver}-six
+Requires: python%{pyver}-oslo-concurrency >= 3.26.0
+Requires: python%{pyver}-oslo-config >= 2:5.2.0
+Requires: python%{pyver}-oslo-context >= 2.19.2
+Requires: python%{pyver}-oslo-db >= 4.27.0
+Requires: python%{pyver}-oslo-messaging >= 5.29.0
+Requires: python%{pyver}-oslo-policy >= 1.30.0
+Requires: python%{pyver}-oslo-serialization >= 2.18.0
+Requires: python%{pyver}-oslo-service >= 1.24.0
+Requires: python%{pyver}-oslo-utils >= 3.33.0
+Requires: python%{pyver}-oslo-middleware >= 3.31.0
+Requires: python%{pyver}-oslo-vmware >= 2.17.0
+Requires: python%{pyver}-oslo-log >= 3.36.0
+Requires: python%{pyver}-webob
+Requires: python%{pyver}-netaddr >= 0.7.18
+Requires: python%{pyver}-cryptography >= 2.1
+Requires: python%{pyver}-jsonschema >= 2.6.0
+Requires: python%{pyver}-monascaclient >= 1.12.1
+
+# Handle python2 exception
+%if %{pyver} == 2
 Requires: python-PuLP
-Requires: python2-keystoneauth1 >= 3.4.0
-Requires: python2-keystonemiddleware >= 4.17.0
 Requires: python-paste
 Requires: python-paste-deploy
-Requires: python2-pbr
-Requires: python2-keystoneclient >= 1:3.8.0
-Requires: python2-heatclient >= 1.10.0
-Requires: python2-mistralclient >= 3.1.0
-Requires: python2-muranoclient >= 0.8.2
-Requires: python2-novaclient >= 1:9.1.0
-Requires: python2-neutronclient >= 6.7.0
-Requires: python2-cinderclient >= 3.3.0
-Requires: python2-swiftclient >= 3.2.0
-Requires: python2-ironicclient >= 2.3.0
-Requires: python2-alembic
 Requires: python-dateutil
-Requires: python2-glanceclient  >= 1:2.8.0
-Requires: python2-routes
-Requires: python2-six
-Requires: python2-oslo-concurrency >= 3.26.0
-Requires: python2-oslo-config >= 2:5.2.0
-Requires: python2-oslo-context >= 2.19.2
-Requires: python2-oslo-db >= 4.27.0
-Requires: python2-oslo-messaging >= 5.29.0
-Requires: python2-oslo-policy >= 1.30.0
-Requires: python2-oslo-serialization >= 2.18.0
-Requires: python2-oslo-service >= 1.24.0
-Requires: python2-oslo-utils >= 3.33.0
-Requires: python2-oslo-middleware >= 3.31.0
-Requires: python2-oslo-vmware >= 2.17.0
-Requires: python2-oslo-log >= 3.36.0
-Requires: python-webob
-Requires: python2-netaddr >= 0.7.18
-Requires: python2-cryptography >= 2.1
-Requires: python2-jsonschema >= 2.6.0
-Requires: python2-monascaclient >= 1.12.1
+%else
+Requires: python%{pyver}-PuLP
+Requires: python%{pyver}-paste
+Requires: python%{pyver}-paste-deploy
+Requires: python%{pyver}-dateutil
+%endif
 
-%description -n python-%{pypi_name}
+%description -n python%{pyver}-%{pypi_name}
 %{common_desc}
 This package contains the Congress python library.
 
 %package common
 Summary:  %{pypi_name} common files
-Requires: python-%{pypi_name} = %{version}-%{release}
+Requires: python%{pyver}-%{pypi_name} = %{version}-%{release}
 
 %description common
 %{common_desc}
 
 This package contains the Congress common files.
 
-%package -n python-%{pypi_name}-tests
+%package -n python%{pyver}-%{pypi_name}-tests
 Summary:    Congress unit and functional tests
-Requires:   python-%{pypi_name} = %{version}-%{release}
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}-tests}
+Requires:   python%{pyver}-%{pypi_name} = %{version}-%{release}
 
-Requires:  python-cliff
-Requires:  python2-fixtures
-Requires:  python2-hacking
-Requires:  python2-mock
-Requires:  python2-oslotest
-Requires:  python2-os-testr
-Requires:  python2-subunit
-Requires:  python2-tenacity
-Requires:  python2-testrepository
-Requires:  python2-testtools
+Requires:  python%{pyver}-fixtures
+Requires:  python%{pyver}-hacking
+Requires:  python%{pyver}-mock
+Requires:  python%{pyver}-oslotest
+Requires:  python%{pyver}-os-testr
+Requires:  python%{pyver}-subunit
+Requires:  python%{pyver}-tenacity
+Requires:  python%{pyver}-testrepository
+Requires:  python%{pyver}-testtools
+
+# Handle python2 exception
+%if %{pyver} == 2
+Requires: python-cliff
 Requires:  python-webtest
+%else
+Requires: python%{pyver}-cliff
+Requires:  python%{pyver}-webtest
+%endif
 
-%description -n python-%{pypi_name}-tests
+%description -n python%{pyver}-%{pypi_name}-tests
 %{common_desc}.
 
 This package contains the Congress unit test files.
 
 # Documentation package
-%package -n python-%{pypi_name}-doc
+%package -n python%{pyver}-%{pypi_name}-doc
 Summary:        Documentation for OpenStack Congress service
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}-doc}
 
-BuildRequires:  python2-sphinx
-BuildRequires:  python2-openstackdocstheme
-BuildRequires:  python2-sphinxcontrib-apidoc
+BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-sphinxcontrib-apidoc
 
-%description -n python-%{pypi_name}-doc
+%description -n python%{pyver}-%{pypi_name}-doc
 Documentation for OpenStack Congress service
 
 # antlr3runtime
-%package -n python-antlr3runtime
+%package -n python%{pyver}-antlr3runtime
 Summary:        Antlr 3 Runtime built buy OpenStack Congress
+%{?python_provide:%python_provide python%{pyver}-antlr3runtime}
 License: BSD
 
-%description -n python-antlr3runtime
+%description -n python%{pyver}-antlr3runtime
 Antlr 3 Runtime built buy OpenStack Congress
 
 %prep
@@ -175,22 +211,22 @@ rm -rf %{pypi_name}.egg-info
 %py_req_cleanup
 
 %build
-%py2_build
+%{pyver_build}
 
 # Generate sample config and add the current directory to PYTHONPATH so
-# oslo-config-generator doesn't skip congress entry points.
-PYTHONPATH=. oslo-config-generator --config-file=./etc/%{pypi_name}-config-generator.conf --output-file=./etc/%{pypi_name}.conf
+# oslo-config-generator-%{pyver} doesn't skip congress entry points.
+PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=./etc/%{pypi_name}-config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
 # generate html docs
 export PYTHONPATH=.
 # FIXME(ykarel) Remove -W until we upgrade Sphinx to 1.7.5 or
 # https://bugs.launchpad.net/congress/+bug/1778171 is fixed to work with Sphinx 1.6.5
-sphinx-build -b html doc/source doc/build/html
-# remove the sphinx-build leftovers
+sphinx-build-%{pyver} -b html doc/source doc/build/html
+# remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
-%py2_install
+%{pyver_install}
 
 # Setup directories
 install -d -m 755 %{buildroot}%{_datadir}/%{pypi_name}
@@ -213,7 +249,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-s
 
 #%check
 # FIXME: tests are taking too long, investigate if they are hung or simply need more time
-#PYTHONPATH=. %{__python2} setup.py testr
+#PYTHONPATH=. %{pyver_bin} setup.py testr
 #%if 0%{with tests}
 #PYTHONPATH=/usr/share/openstack-dashboard/ ./run_tests.sh -N -P
 #%endif
@@ -239,16 +275,16 @@ exit 0
 %{_bindir}/%{pypi_name}*
 %{_unitdir}/openstack-%{pypi_name}-server.service
 
-%files -n python-%{pypi_name}-tests
+%files -n python%{pyver}-%{pypi_name}-tests
 %license LICENSE
-%{python2_sitelib}/%{pypi_name}/tests
+%{pyver_sitelib}/%{pypi_name}/tests
 
-%files -n python-%{pypi_name}
+%files -n python%{pyver}-%{pypi_name}
 %license LICENSE
 %doc README.rst
-%{python2_sitelib}/%{pypi_name}
-%{python2_sitelib}/%{pypi_name}-*.egg-info
-%exclude %{python2_sitelib}/%{pypi_name}/tests
+%{pyver_sitelib}/%{pypi_name}
+%{pyver_sitelib}/%{pypi_name}-*.egg-info
+%exclude %{pyver_sitelib}/%{pypi_name}/tests
 
 %files common
 %license LICENSE
@@ -262,13 +298,13 @@ exit 0
 %dir %{_sharedstatedir}/%{pypi_name}
 %dir %{_datadir}/%{pypi_name}
 
-%files -n python-%{pypi_name}-doc
+%files -n python%{pyver}-%{pypi_name}-doc
 %license LICENSE
 %doc doc/build/html
 
-%files -n python-antlr3runtime
+%files -n python%{pyver}-antlr3runtime
 %license thirdparty/antlr3-antlr-3.5/LICENSE.txt
-%{python2_sitelib}/antlr3runtime
-%exclude %{python2_sitelib}/antlr3runtime/Python3
+%{pyver_sitelib}/antlr3runtime
+%exclude %{pyver_sitelib}/antlr3runtime/Python3
 
 %changelog
