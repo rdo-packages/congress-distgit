@@ -316,3 +316,4 @@ exit 0
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/congress/commit/?id=874ff3823fa048b1d3b25171260a2d8412593447
