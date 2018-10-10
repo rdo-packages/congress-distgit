@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_814579b4",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-10-10T08:48:47Z",
+      "side": 1,
+      "message": "_",
+      "range": {
+        "startLine": 290,
+        "startChar": 26,
+        "endLine": 290,
+        "endChar": 27
+      },
+      "revId": "79fb17b4690d49791f050f32a49c98ee7c262643",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
