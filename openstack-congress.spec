@@ -178,7 +178,7 @@ License: BSD
 Antlr 3 Runtime built buy OpenStack Congress
 
 %prep
-%autosetup -n %{pypi_name}-%{upstream_version} -S git
+%autosetup -n openstack-%{pypi_name}-%{upstream_version} -S git
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
@@ -202,8 +202,8 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %py2_install
 
 # Create fake egg-info for the tempest plugin
-%global service %{pypi_name}
-%py2_entrypoint %{pypi_name} %{pypi_name}
+%global service %{name}
+%py2_entrypoint openstack_%{pypi_name} openstack_%{pypi_name}
 
 # Setup directories
 install -d -m 755 %{buildroot}%{_datadir}/%{pypi_name}
@@ -255,13 +255,13 @@ exit 0
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}/tests
 %{python2_sitelib}/%{pypi_name}_tempest_tests
-%{python2_sitelib}/%{pypi_name}_tests.egg-info
+%{python2_sitelib}/openstack_%{pypi_name}_tests.egg-info
 
 %files -n python-%{pypi_name}
 %license LICENSE
 %doc README.rst
 %{python2_sitelib}/%{pypi_name}
-%{python2_sitelib}/%{pypi_name}-*.egg-info
+%{python2_sitelib}/openstack_%{pypi_name}-*.egg-info
 %exclude %{python2_sitelib}/%{pypi_name}/tests
 %exclude %{python2_sitelib}/%{pypi_name}_tempest_tests
 
