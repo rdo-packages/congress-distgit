@@ -202,7 +202,7 @@ License: BSD
 Antlr 3 Runtime built buy OpenStack Congress
 
 %prep
-%autosetup -n %{pypi_name}-%{upstream_version} -S git
+%autosetup -n openstack-%{pypi_name}-%{upstream_version} -S git
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 # Remove python2 specific code when building non py2 package as this leads to failing bytecompilation
@@ -287,7 +287,7 @@ exit 0
 %license LICENSE
 %doc README.rst
 %{pyver_sitelib}/%{pypi_name}
-%{pyver_sitelib}/%{pypi_name}-*.egg-info
+%{pyver_sitelib}/openstack-%{pypi_name}-*.egg-info
 %exclude %{pyver_sitelib}/%{pypi_name}/tests
 
 %files common
