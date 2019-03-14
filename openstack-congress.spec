@@ -109,6 +109,7 @@ Requires: python%{pyver}-swiftclient >= 3.2.0
 Requires: python%{pyver}-ironicclient >= 2.3.0
 Requires: python%{pyver}-alembic
 Requires: python%{pyver}-glanceclient  >= 1:2.8.0
+Requires: python%{pyver}-tackerclient  >= 0.8.0
 Requires: python%{pyver}-routes
 Requires: python%{pyver}-six
 Requires: python%{pyver}-oslo-concurrency >= 3.26.0
@@ -123,11 +124,16 @@ Requires: python%{pyver}-oslo-utils >= 3.33.0
 Requires: python%{pyver}-oslo-middleware >= 3.31.0
 Requires: python%{pyver}-oslo-vmware >= 2.17.0
 Requires: python%{pyver}-oslo-log >= 3.36.0
+Requires: python%{pyver}-oslo-upgradecheck >= 0.1.0
 Requires: python%{pyver}-webob
 Requires: python%{pyver}-netaddr >= 0.7.18
 Requires: python%{pyver}-cryptography >= 2.1
 Requires: python%{pyver}-jsonschema >= 2.6.0
 Requires: python%{pyver}-monascaclient >= 1.12.1
+Requires: python%{pyver}-jsonpath-rw
+Requires: python%{pyver}-psycopg2
+Requires: python%{pyver}-requests >= 2.14.2
+Requires: python%{pyver}-PyYAML >= 3.10.0
 
 # Handle python2 exception
 %if %{pyver} == 2
