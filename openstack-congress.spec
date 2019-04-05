@@ -1,4 +1,4 @@
-%global milestone .0rc1
+%global milestone .0rc2
 # Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
 %global pyver %{python3_pkgversion}
@@ -19,14 +19,14 @@ OpenStack Congress Service is an open policy framework for OpenStack
 
 Name:           openstack-%{pypi_name}
 Version:        9.0.0
-Release:        0.1%{?milestone}%{?dist}
+Release:        0.2%{?milestone}%{?dist}
 Summary:        OpenStack Congress Service
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{name}-%{upstream_version}.tar.gz
 #
-# patches_base=9.0.0.0rc1
+# patches_base=9.0.0.0rc2
 #
 
 Source1:        openstack-congress-server.service
@@ -334,6 +334,9 @@ exit 0
 %endif
 
 %changelog
+* Fri Apr 05 2019 RDO <dev@lists.rdoproject.org> 9.0.0-0.2.0rc1
+- Update to 9.0.0.0rc2
+
 * Fri Mar 22 2019 RDO <dev@lists.rdoproject.org> 9.0.0-0.1.0rc1
 - Update to 9.0.0.0rc1
 
