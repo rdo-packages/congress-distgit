@@ -281,3 +281,4 @@ exit 0
 * Thu Feb 15 2018 RDO <dev@lists.rdoproject.org> 7.0.0-0.1.0rc1
 - Update to 7.0.0.0rc1
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/congress/commit/?id=dc64fa1c0480407aa3e6f0993623844ff770ccac
