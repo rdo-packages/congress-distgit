@@ -294,3 +294,4 @@ exit 0
 * Mon Aug 21 2017 Alfredo Moralejo <amoralej@redhat.com> 6.0.0-0.1.0rc1
 - Update to 6.0.0.0rc1
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/congress/commit/?id=6e0558e6ee1169dd5cec65d49e3197eb05597d38
