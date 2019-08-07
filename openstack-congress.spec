@@ -13,6 +13,8 @@
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
+%global with_doc 1
+
 %global common_desc \
 OpenStack Congress Service is an open policy framework for OpenStack
 
@@ -65,8 +67,12 @@ BuildRequires:  openstack-macros
 # Handle python2 exception
 %if %{pyver} == 2
 BuildRequires:  python-django-horizon
+BuildRequires:  python-jsonpath-rw
+BuildRequires:  python-psycopg2
 %else
 BuildRequires:  python%{pyver}-django-horizon
+BuildRequires:  python%{pyver}-jsonpath-rw
+BuildRequires:  python%{pyver}-psycopg2
 %endif
 
 Requires:  python%{pyver}-congressclient
@@ -193,6 +199,7 @@ Requires:  python%{pyver}-webtest
 
 This package contains the Congress unit test files.
 
+%if 0%{?with_doc}
 # Documentation package
 %package -n python%{pyver}-%{pypi_name}-doc
 Summary:        Documentation for OpenStack Congress service
@@ -200,10 +207,14 @@ Summary:        Documentation for OpenStack Congress service
 
 BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-oslo-upgradecheck
+BuildRequires:  python%{pyver}-mistralclient
 BuildRequires:  python%{pyver}-sphinxcontrib-apidoc
+BuildRequires:  python%{pyver}-tackerclient
 
 %description -n python%{pyver}-%{pypi_name}-doc
 Documentation for OpenStack Congress service
+%endif
 
 # antlr3runtime
 %package -n python%{pyver}-antlr3runtime
@@ -234,13 +245,13 @@ rm -rf congress/datalog/Python2 antlr3runtime/Python
 # oslo-config-generator-%{pyver} doesn't skip congress entry points.
 PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=./etc/%{pypi_name}-config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
+%if 0%{?with_doc}
 # generate html docs
 export PYTHONPATH=.
-# FIXME(ykarel) Remove -W until we upgrade Sphinx to 1.7.5 or
-# https://bugs.launchpad.net/congress/+bug/1778171 is fixed to work with Sphinx 1.6.5
-sphinx-build-%{pyver} -b html doc/source doc/build/html
+sphinx-build-%{pyver} -W -b html doc/source doc/build/html
 # remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 %install
 %{pyver_install}
@@ -315,9 +326,11 @@ exit 0
 %dir %{_sharedstatedir}/%{pypi_name}
 %dir %{_datadir}/%{pypi_name}
 
+%if 0%{?with_doc}
 %files -n python%{pyver}-%{pypi_name}-doc
 %license LICENSE
 %doc doc/build/html
+%endif
 
 %files -n python%{pyver}-antlr3runtime
 %license thirdparty/antlr3-antlr-3.5/LICENSE.txt
