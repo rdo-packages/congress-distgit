@@ -135,7 +135,7 @@ Requires: python%{pyver}-netaddr >= 0.7.18
 Requires: python%{pyver}-cryptography >= 2.1
 Requires: python%{pyver}-jsonschema >= 2.6.0
 Requires: python%{pyver}-monascaclient >= 1.12.1
-Requires: python%{pyver}-requests >= 2.14.2
+Requires: python%{pyver}-requests >= 2.20.0
 Requires: python%{pyver}-tenacity >= 4.4.0
 
 # Handle python2 exception
