@@ -66,11 +66,9 @@ BuildRequires:  openstack-macros
 
 # Handle python2 exception
 %if %{pyver} == 2
-BuildRequires:  python-django-horizon
 BuildRequires:  python-jsonpath-rw
 BuildRequires:  python-psycopg2
 %else
-BuildRequires:  python%{pyver}-django-horizon
 BuildRequires:  python%{pyver}-jsonpath-rw
 BuildRequires:  python%{pyver}-psycopg2
 %endif
