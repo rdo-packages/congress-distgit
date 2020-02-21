@@ -53,7 +53,6 @@ BuildRequires:  python3-tenacity
 BuildRequires:  systemd
 BuildRequires:  openstack-macros
 
-BuildRequires:  python3-django-horizon
 BuildRequires:  python3-jsonpath-rw
 BuildRequires:  python3-psycopg2
 
