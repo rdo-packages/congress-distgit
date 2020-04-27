@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ecbf438e_4545b67f",
+        "filename": "openstack-congress.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-04-27T10:30:06Z",
+      "side": 1,
+      "message": "let\u0027s clear conditions.",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 10
+      },
+      "revId": "381820d74e89b1e71b6f265fffd61872e40b651c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
