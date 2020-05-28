@@ -300,3 +300,4 @@ exit 0
 %exclude %{python3_sitelib}/antlr3runtime/Python
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/congress/commit/?id=bba805af02f516b95650531afc02d1c60b1cd010
