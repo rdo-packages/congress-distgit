@@ -20,7 +20,7 @@ Source2:        congress.logrotate
 
 BuildArch:      noarch
 
-BuildRequires:  git
+BuildRequires:  git-core
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-aodhclient
