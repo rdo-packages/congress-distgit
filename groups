@@ -1,6 +1,6 @@
 # UUID Group Name
 global:Registered-Users	Registered Users
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Non-Interactive Users
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Service Users
 94037d9644f9e390fde4b87c3a3c7af9da25ec17	openstack/congress-ptl
 401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
 global:Anonymous-Users	Anonymous Users
